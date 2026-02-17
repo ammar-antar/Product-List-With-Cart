@@ -111,12 +111,15 @@ function renderCart() {
     `;
 
     cartItemConfirm.innerHTML = `
-      <div class="info">
+    <div class="box-content">
+    <img src=${item.image.desktop} alt=${item.category} class="box-img">
+    <div class="info">
         <div class="name">${item.name}</div>
         <div class="price">
           <span class="units">${item.qty}x</span>
           <span class="price-unit">@$${item.price.toFixed(2)}</span>
         </div>
+      </div>
       </div>
       <span class="total-price">$${itemTotal.toFixed(2)}</span>
     `;

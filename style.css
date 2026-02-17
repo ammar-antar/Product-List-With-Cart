@@ -195,7 +195,7 @@ body {
     text-transform: capitalize;
 }
 
-.container .cart .cart-content img{
+.container .cart .cart-content img {
     margin-block: 2rem;
 }
 
@@ -219,8 +219,20 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 12px;
     border-bottom: 1px solid #eee;
+}
+
+.order-confirmed .box-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+.box-img {
+    max-width: 50px;
 }
 
 .info {
