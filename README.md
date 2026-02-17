@@ -22,8 +22,8 @@ Users can:
 
 ### Links
 
-- **Solution:** https://www.frontendmentor.io/solutions/product-list-with-cart  
-- **Live Site:** https://your-live-site-url.com
+- **Solution:** https://www.frontendmentor.io/solutions/interactive-cart-vanilla-js-state-management-and-localstorage-4f8_xoW7U5
+- **Live Site:** https://ammar-antar.github.io/Product-List-With-Cart/
 
 ## My Process
 
