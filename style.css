@@ -1,0 +1,402 @@
+/* =========================================
+   1. Font & Reset
+   ========================================= */
+@font-face {
+    font-family: "Red Hat Text", sans-serif;
+    src: url('./assets/fonts/RedHatText-VariableFont_wght.ttf');
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* =========================================
+   2. Color Variables
+   ========================================= */
+:root {
+    --red-color: hsl(14, 86%, 42%);
+    --green-color: hsl(159, 69%, 38%);
+    --rose-50: hsl(20, 50%, 98%);
+    --rose-100: hsl(13, 31%, 94%);
+    --rose-300: hsl(14, 25%, 72%);
+    --rose-400: hsl(7, 20%, 60%);
+    --rose-500: hsl(12, 20%, 44%);
+    --rose-900: hsl(14, 65%, 9%);
+}
+
+/* =========================================
+   3. Body
+   ========================================= */
+body {
+    font-family: "Red Hat Text", sans-serif;
+    background-color: var(--rose-50);
+}
+
+/* =========================================
+   4. Container & Layout
+   ========================================= */
+.container {
+    width: min(calc(100% - 2rem), 1140px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 100px auto;
+    gap: 3rem;
+}
+
+.products-section {
+    flex: 1 1 auto;
+}
+
+/* Products grid */
+.container .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* =========================================
+   5. Product Card
+   ========================================= */
+.container .products .product {
+    position: relative;
+    margin: auto;
+}
+
+.container .products .product img {
+    max-width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+/* Add to Cart button */
+.container .products .product .add-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 3px;
+    border-radius: 20px;
+    text-transform: capitalize;
+    background-color: var(--rose-50);
+    border: 1px solid #ccc;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.container .products .product .add-icon img {
+    margin-right: 5px;
+}
+
+/* Product information */
+.container .products .product .info {
+    margin-top: 2rem;
+}
+
+.container .products .product .info .category {
+    color: var(--rose-500);
+}
+
+.container .products .product .info .name {
+    font-weight: 600;
+    margin-block: 5px;
+}
+
+.container .products .product .info .price {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--red-color);
+}
+
+/* =========================================
+   6. Number Control (+/-)
+   ========================================= */
+.number-control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    width: 50%;
+    padding: 3px;
+    border-radius: 20px;
+    background-color: var(--red-color);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.number-control button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    font-size: 20px;
+    cursor: pointer;
+    color: #fff;
+    border: 1px solid #fff;
+    transition: background-color 0.2s ease;
+}
+
+.number-control button:hover {
+    background-color: var(--rose-900);
+}
+
+/* Input styling */
+.number-control input {
+    width: 50px;
+    text-align: center;
+    border: none;
+    color: white;
+    outline: none;
+    background-color: transparent;
+    font-size: 16px;
+}
+
+.number-control input::-webkit-inner-spin-button,
+.number-control input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.number-control input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+/* =========================================
+   7. Cart & Modal
+   ========================================= */
+.container .cart {
+    width: 400px;
+    background-color: #fff;
+    height: fit-content;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.container .cart>p {
+    color: var(--red-color);
+    font-weight: bold;
+    text-align: left;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.container .cart .cart-content img{
+    margin-block: 2rem;
+}
+
+.container .cart .cart-content p {
+    color: var(--rose-500);
+    text-transform: capitalize;
+}
+
+/* =========================================
+   8. Product Content in Cart
+   ========================================= */
+.product-content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    gap: 20px;
+}
+
+.box {
+    padding-block: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.name {
+    font-weight: 600;
+    font-size: 15px;
+    color: #222;
+}
+
+.price {
+    display: flex;
+    gap: 10px;
+    font-size: 16px;
+}
+
+.units {
+    color: #c75b2b;
+    font-weight: 600;
+}
+
+.price-unit {
+    color: #777;
+}
+
+.total-price {
+    font-weight: 600;
+    color: #222;
+}
+
+.delete {
+    border: 1px solid var(--red-color);
+    color: var(--red-color);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.delete:hover {
+    background: var(--red-color);
+    color: #fff;
+}
+
+.order-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 16px;
+    padding-top: 10px;
+}
+
+.carbon {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: #f1f8f4;
+    color: #2f7a5f;
+    font-size: 13px;
+    text-transform: capitalize;
+    gap: 10px;
+}
+
+.cart .product-content .carbon img {
+    margin: 0;
+    width: 20px;
+}
+
+/* Confirm buttons */
+.confirm,
+.start-new-order {
+    background: #c75b2b;
+    color: #fff;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.confirm:hover {
+    background: #a6471f;
+}
+
+.hide {
+    display: none;
+}
+
+/* =========================================
+   9. Modal Overlay
+   ========================================= */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.order-confirmed {
+    text-align: center;
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    width: 100%;
+    max-height: 100%;
+    max-width: 500px;
+    overflow-y: auto;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+}
+
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-overlay.show .order-confirmed {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.order-confirmed h3 {
+    font-size: 20px;
+    margin-block: 1rem;
+}
+
+/* =========================================
+   10. Product Added State
+   ========================================= */
+.product.added .add-icon {
+    display: none;
+}
+
+.product.added img {
+    border: 1px solid var(--red-color);
+}
+
+.product.added .number-control {
+    display: flex;
+}
+
+/* Default number control hidden */
+.number-control {
+    display: none;
+}
+
+/* =========================================
+   11. Footer
+   ========================================= */
+.attribution {
+    padding: 20px;
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}

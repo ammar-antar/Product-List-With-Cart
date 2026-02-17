@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Product List with Cart</title>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <!-- Product List Section -->
+        <div class="products-section">
+          <h1>Desserts</h1>
+          <div class="products">
+            <div class="product">
+              <img alt="product image" />
+              <!-- Add to Cart Button -->
+              <button class="add-icon">
+                <img src="assets/images/icon-add-to-cart.svg" alt="" />
+                Add to Cart
+              </button>
+              <!-- Quantity Controls -->
+              <div class="number-control">
+                <button class="remove">-</button>
+                <input type="number" value="1" min="0" />
+                <button class="add">+</button>
+              </div>
+              <!-- Product Info -->
+              <div class="info">
+                <p class="category"></p>
+                <h3 class="name"></h3>
+                <div class="price"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cart Section -->
+        <div class="cart">
+          <p>Your Cart <span class="quantity">(0)</span></p>
+          <div class="cart-content">
+            <!-- Empty Cart Message -->
+            <div class="empty">
+              <img src="assets/images/illustration-empty-cart.svg" alt="" />
+              <p>Your added items will appear here</p>
+            </div>
+            <!-- Full Cart Items -->
+            <div class="full hide">
+              <div class="product-content">
+                <div class="box">
+                  <div class="info">
+                    <div class="name"></div>
+                    <div class="price">
+                      <span class="units"></span>
+                      <span class="price-unit"></span>
+                      <span class="total-price"></span>
+                    </div>
+                  </div>
+                  <button class="delete">x</button>
+                </div>
+                <div class="order-total">
+                  <span>Order Total</span>
+                  <span>$45.5</span>
+                </div>
+                <div class="carbon">
+                  <img src="assets/images/icon-carbon-neutral.svg" alt="" />
+                  <p>This is a carbon-neutral delivery</p>
+                </div>
+                <button class="confirm">Confirm Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Overlay -->
+      <div class="modal-overlay">
+        <div class="order-confirmed">
+          <img
+            src="assets/images/icon-order-confirmed.svg"
+            alt="order-confirmed"
+          />
+          <h3>Order Confirmed</h3>
+          <div class="product-content">
+            <div class="box">
+              <div class="info">
+                <div class="name"></div>
+                <div class="price">
+                  <span class="units"></span>
+                  <span class="price-unit"></span>
+                  <span class="total-price"></span>
+                </div>
+              </div>
+            </div>
+            <div class="order-total">
+              <span>Order Total</span>
+              <span></span>
+            </div>
+            <button class="start-new-order">Start New Order</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="mailto:ammar.antarh@gmail.com">Ammar Antar</a>.
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
